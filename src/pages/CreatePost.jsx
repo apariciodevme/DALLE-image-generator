@@ -17,13 +17,18 @@ const CreatePost = () => {
 
   const generateImage = () => {
     
-  }
+  };
 
   const handleSubmit = () => {};
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSurpriseMe = () => {};
+  const handleSurpriseMe = () => {
+    const randomPropmt = getRandomPrompt(form.prompt);
+    setform({ ...form, prompt: randomPropmt });
+  };
 
   return (
     <section className="mx-auto max-w-7xl ">
@@ -79,27 +84,25 @@ const CreatePost = () => {
         </div>
 
         <div className="flex gap-5 mt-5">
-          <button 
-           type="button"
-           onClick={generateImage}
-           className="w-full px-5 py-2 text-sm font-medium text-center text-white rounded-md bg-green-600/80 sm:w-auto"
-           
-           >
-            {generatingImg ? 'Generating...' : "Generate Image"}
-           </button>
+          <button
+            type="button"
+            onClick={generateImage}
+            className="w-full px-5 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-md sm:w-auto"
+          >
+            {generatingImg ? "Generating..." : "Generate Image"}
+          </button>
         </div>
 
         <div className="mt-10">
           <p className="mt-2 text-sm text-gray-500">
-              Once you have created the image you want, you can share it with others in the community
+            Once you have created the image you want, you can share it with
+            others in the community
           </p>
           <button
-          type="submit"
-          className="w-full px-4 py-2 mt-3 text-sm font-medium text-center text-white bg-indigo-400 rounded-md font-md sm:w-auto"
+            type="submit"
+            className="w-full px-4 py-2 mt-3 text-sm font-medium text-center text-white bg-indigo-400 rounded-md font-md sm:w-auto"
           >
-
-              {loading ? 'Sharing...' : 'Share with the community!'}
-
+            {loading ? "Sharing..." : "Share with the community!"}
           </button>
         </div>
       </form>
