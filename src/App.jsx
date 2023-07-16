@@ -18,7 +18,7 @@ const App = () => {
           Create
         </Link>
       </header>
-      <main className="w-full px-4 py-8 bg-gray-100 min-h-[calc(100vh-73px)] sm:p-8">
+      <main className="w-full px-4 py-8 bg-gray-50 min-h-[calc(100vh-73px)] sm:p-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<CreatePost />} />
